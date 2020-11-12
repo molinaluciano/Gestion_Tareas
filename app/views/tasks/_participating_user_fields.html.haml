@@ -1,0 +1,6 @@
+-# todo lo nnecesario para abordar modelo de usuario
+-# Aqui tendria todos los usuarios, menos el que inicio sesion
+.nested-fields
+ = f.input :user_id, as: :select, collection: User.all - [current_user]
+ = f.input :role
+-#  dejaremos la caja pero se espera nro 1 sera responsable y nro 2 seguidor

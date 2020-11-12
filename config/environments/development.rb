@@ -32,10 +32,21 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.raise_delivery_errors = true
+  # # configurar host en caso de server
+  # config.action_mailer.default_url_options = {host: 'localhost:3000'}
+  # config.action_mailer.perform_caching = false
+  # # realice entregas
+  # # config.action_mailer.perform_deliveries = true
+  # # tipo de mailer a utilizar
+  # # config.action_mailer.delivery_method = mailcatcher
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = { :address => 'localhost', :port => 1025 }
+# en la clase no funciono el metodo de la clase por lo que segui lo comentario e indicaba las siguientes 3 intrucciones
 
-  config.action_mailer.perform_caching = false
-
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => 'localhost', :port => 1025 }
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
